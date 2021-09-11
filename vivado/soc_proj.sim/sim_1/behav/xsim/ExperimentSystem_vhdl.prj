@@ -1,0 +1,9 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../hdl/HA.vhd" \
+"../../../../../hdl/TwiddleX.vhd" \
+"../../../../../hdl/adder_exact.vhd" \
+"../../../../../hdl/mult_exact.vhd" \
+
+# Do not sort compile order
+nosort

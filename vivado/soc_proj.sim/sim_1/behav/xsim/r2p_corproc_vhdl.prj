@@ -1,0 +1,10 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../hdl/r2p_CordicPipe.vhd" \
+"../../../../../hdl/r2p_cordic.vhd" \
+"../../../../../hdl/r2p_post.vhd" \
+"../../../../../hdl/r2p_pre.vhd" \
+"../../../../../hdl/r2p_corproc.vhd" \
+
+# Do not sort compile order
+nosort

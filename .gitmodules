@@ -1,0 +1,3 @@
+[submodule "mb_sw"]
+	path = mb_sw
+	url = git@github.com:McBrez/powerReconf_sw.git

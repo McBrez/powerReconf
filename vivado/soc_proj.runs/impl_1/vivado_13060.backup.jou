@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Sat Sep 11 13:58:14 2021
+# Process ID: 13060
+# Current directory: D:/DEV/powerReconf/vivado/soc_proj.runs/impl_1
+# Command line: vivado.exe -log bd_soc_proj_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source bd_soc_proj_wrapper.tcl -notrace
+# Log file: D:/DEV/powerReconf/vivado/soc_proj.runs/impl_1/bd_soc_proj_wrapper.vdi
+# Journal file: D:/DEV/powerReconf/vivado/soc_proj.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source bd_soc_proj_wrapper.tcl -notrace

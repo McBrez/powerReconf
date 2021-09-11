@@ -1,0 +1,20 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../soc_proj.srcs/sources_1/bd/bd_soc_proj/ipshared/8b3d" --include "../../../../soc_proj.srcs/sources_1/bd/bd_soc_proj/ipshared/ec67/hdl" \
+"../../../../../hdl/experiment_axi_if.v" \
+"../../../../../hdl/skidbuffer.v" \
+
+sv xil_defaultlib  --include "../../../../soc_proj.srcs/sources_1/bd/bd_soc_proj/ipshared/8b3d" --include "../../../../soc_proj.srcs/sources_1/bd/bd_soc_proj/ipshared/ec67/hdl" \
+"../../../../../hdl/constants.sv" \
+"../../../../../hdl/configuration.sv" \
+"../../../../../hdl/experiment.sv" \
+"../../../../../hdl/experiment_data_mux.sv" \
+"../../../../../hdl/experiment_wrapper.sv" \
+
+verilog xil_defaultlib  --include "../../../../soc_proj.srcs/sources_1/bd/bd_soc_proj/ipshared/8b3d" --include "../../../../soc_proj.srcs/sources_1/bd/bd_soc_proj/ipshared/ec67/hdl" \
+"../../../../../hdl/experiment_system.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

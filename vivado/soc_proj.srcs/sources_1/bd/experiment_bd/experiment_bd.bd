@@ -1,0 +1,156 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x43E470D543E470D5",
+      "device": "xc7a100tcsg324-1",
+      "name": "experiment_bd",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2020.1"
+    },
+    "design_tree": {
+      "ExperimentWrapper_0": ""
+    },
+    "ports": {
+      "A_0": {
+        "direction": "I",
+        "left": "15",
+        "right": "0"
+      },
+      "B_0": {
+        "direction": "I",
+        "left": "15",
+        "right": "0"
+      },
+      "Q_0": {
+        "direction": "O",
+        "left": "19",
+        "right": "0"
+      },
+      "agingSensorValues_0": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "dummyModuleClk_0": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "ready_0": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      },
+      "referenceClk_0": {
+        "direction": "I"
+      },
+      "triggerMeasurement_0": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      }
+    },
+    "components": {
+      "ExperimentWrapper_0": {
+        "vlnv": "xilinx.com:module_ref:ExperimentWrapper:1.0",
+        "xci_name": "experiment_bd_ExperimentWrapper_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ExperimentWrapper",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "referenceClk": {
+            "direction": "I"
+          },
+          "dummyModuleClk": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "A": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "B": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "triggerMeasurement": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "Q": {
+            "direction": "O",
+            "left": "19",
+            "right": "0"
+          },
+          "ready": {
+            "direction": "O",
+            "left": "0",
+            "right": "0"
+          },
+          "agingSensorValues": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "A_0_1": {
+        "ports": [
+          "A_0",
+          "ExperimentWrapper_0/A"
+        ]
+      },
+      "B_0_1": {
+        "ports": [
+          "B_0",
+          "ExperimentWrapper_0/B"
+        ]
+      },
+      "ExperimentWrapper_0_Q": {
+        "ports": [
+          "ExperimentWrapper_0/Q",
+          "Q_0"
+        ]
+      },
+      "ExperimentWrapper_0_agingSensorValues": {
+        "ports": [
+          "ExperimentWrapper_0/agingSensorValues",
+          "agingSensorValues_0"
+        ]
+      },
+      "dummyModuleClk_0_1": {
+        "ports": [
+          "dummyModuleClk_0",
+          "ExperimentWrapper_0/dummyModuleClk"
+        ]
+      },
+      "ExperimentWrapper_0_ready": {
+        "ports": [
+          "ExperimentWrapper_0/ready",
+          "ready_0"
+        ]
+      },
+      "referenceClk_0_1": {
+        "ports": [
+          "referenceClk_0",
+          "ExperimentWrapper_0/referenceClk"
+        ]
+      },
+      "triggerMeasurement_0_1": {
+        "ports": [
+          "triggerMeasurement_0",
+          "ExperimentWrapper_0/triggerMeasurement"
+        ]
+      }
+    }
+  }
+}
