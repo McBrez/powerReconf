@@ -10,16 +10,10 @@ set final_target    "-format MCS"
 set options         "-force -checksum FF -size 32"
 set bpi_options     "-interface SPIx1"
 
-set static  "config_0_full"
+set static  "conf_exact_full"
 set partials	{ \
-					pblock_0_rm_0_empty_partial \
-                    pblock_0_rm_0_full_partial \
-					pblock_1_rm_0_empty_partial \
-					pblock_1_rm_0_full_partial \
-					pblock_2_rm_0_empty_partial \
-                    pblock_2_rm_0_full_partial \
-					pblock_3_rm_0_empty_partial \
-					pblock_3_rm_0_full_partial \
+					pblock_0_twiddleX_approx_partial \
+                    pblock_0_twiddleX_exact_partial \
 				}
 
 # Convert each partial bitfile into a bin file formatted for the ICAP port
@@ -31,14 +25,8 @@ foreach p $partials {
 
 # Now do the static and pack the partials as datafiles
 set cmd "write_cfgmem $options $final_target $bpi_options -loadbit \"up 0 Bitstreams/download.bit \" -loaddata \""
-append cmd " up 003B0000 Bitstreams/pblock_0_rm_0_empty_partial.bin"
-append cmd " up 00400000 Bitstreams/pblock_0_rm_0_full_partial.bin"
-append cmd " up 00450000 Bitstreams/pblock_1_rm_0_empty_partial.bin"
-append cmd " up 00500000 Bitstreams/pblock_1_rm_0_full_partial.bin"
-append cmd " up 00550000 Bitstreams/pblock_2_rm_0_empty_partial.bin"
-append cmd " up 00600000 Bitstreams/pblock_2_rm_0_full_partial.bin"
-append cmd " up 00650000 Bitstreams/pblock_3_rm_0_empty_partial.bin"
-append cmd " up 00700000 Bitstreams/pblock_3_rm_0_full_partial.bin"
+append cmd " up 003B0000 Bitstreams/pblock_0_twiddleX_approx_partial.bin"
+append cmd " up 004B0000 Bitstreams/pblock_0_twiddleX_exact_partial.bin"
 append cmd "\" Bitstreams/pr_prom"
 
 puts $cmd

@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1631368990">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1631656050">
   <File Type="PA-TCL" Name="bd_soc_proj_wrapper.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="bd_soc_proj_wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="bd_soc_proj_wrapper_reports.tcl"/>
   <File Type="RDS-RDS" Name="bd_soc_proj_wrapper.vds"/>
   <File Type="RDS-UTIL" Name="bd_soc_proj_wrapper_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="bd_soc_proj_wrapper_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="bd_soc_proj_wrapper.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="bd_soc_proj_wrapper_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="bd_soc_proj_wrapper_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../hdl/experiment_axi_if.v">
@@ -19,6 +16,13 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../hdl/skidbuffer.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../hdl/TwiddleX_stub.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -60,30 +64,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../hdl/HA.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../hdl/TwiddleX.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../hdl/adder_exact.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../hdl/mult_exact.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PPRDIR/../hdl/experiment_system.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -102,72 +82,6 @@
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../hdl/reconfigurablemodule_stub.sv">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../hdl/reconfigureablemoduleframe.sv">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../hdl/r2p_CordicPipe.vhd">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../hdl/r2p_cordic.vhd">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../hdl/r2p_corproc.vhd">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../hdl/r2p_post.vhd">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../hdl/r2p_pre.vhd">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="C:/Users/David/vitis/mb_test_app_2/Debug/mb_test_app_2.elf">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="ScopedToRef" Val="bd_soc_proj"/>
-        <Attr Name="ScopedToCell" Val="microblaze_0"/>
-        <Attr Name="IsVisible" Val="1"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../hdl/sub_exact.vhd">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
@@ -211,5 +125,8 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="bd_soc_proj_microblaze_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="bd_soc_proj_reset_inv_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="bd_soc_proj_xadc_wiz_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="bd_soc_proj_ExperimentSystem_0_0"/>
 </GenRun>

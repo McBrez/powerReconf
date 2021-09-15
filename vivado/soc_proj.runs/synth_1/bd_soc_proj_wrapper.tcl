@@ -70,11 +70,9 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 3
-set_param synth.incrementalSynthesisCache C:/Users/David/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-12420-FREISMUTHDESK/incrSyn
+set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {HDL-1065} -limit 10000
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 set_msg_config  -id {[BD 41-1306]}  -suppress 
 set_msg_config  -id {[BD 41-1271]}  -suppress 
 set_msg_config  -id {[BD 41-1306]}  -suppress 
@@ -93,20 +91,12 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part_repo_paths {D:/Xilinx/BoardStore/XilinxBoardStore-2020.1} [current_project]
 set_property board_part digilentinc.com:nexys4_ddr:part0:1.1 [current_project]
-set_property ip_repo_paths {
-  d:/DEV/powerReconf/vivado/ip_repo/experiment_axi_wrapper_1.0
-  d:/DEV/powerReconf/experiment_axi/experiment_axi_1.0
-  d:/DEV/powerReconf/ip_repo/myip_1.0
-  d:/DEV/powerReconf/ip_repo/myip_1.0
-} [current_project]
+set_property ip_repo_paths d:/DEV/powerReconf/vivado/soc_proj.ip_user_files/bd/bd_soc_proj/ip [current_project]
 update_ip_catalog
 set_property ip_output_repo d:/DEV/powerReconf/vivado/soc_proj.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-add_files C:/Users/David/vitis/mb_test_app_2/Debug/mb_test_app_2.elf
-set_property SCOPED_TO_REF bd_soc_proj [get_files -all C:/Users/David/vitis/mb_test_app_2/Debug/mb_test_app_2.elf]
-set_property SCOPED_TO_CELLS microblaze_0 [get_files -all C:/Users/David/vitis/mb_test_app_2/Debug/mb_test_app_2.elf]
 read_verilog -library xil_defaultlib D:/DEV/powerReconf/vivado/soc_proj.srcs/sources_1/bd/bd_soc_proj/hdl/bd_soc_proj_wrapper.v
 add_files D:/DEV/powerReconf/vivado/soc_proj.srcs/sources_1/bd/bd_soc_proj/bd_soc_proj.bd
 set_property used_in_implementation false [get_files -all d:/DEV/powerReconf/vivado/soc_proj.srcs/sources_1/bd/bd_soc_proj/ip/bd_soc_proj_microblaze_0_0/bd_soc_proj_microblaze_0_0.xdc]

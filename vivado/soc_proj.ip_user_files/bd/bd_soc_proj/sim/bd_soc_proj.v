@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-//Date        : Sat Sep 11 11:53:26 2021
+//Date        : Tue Sep 14 18:34:28 2021
 //Host        : FREISMUTHDESK running 64-bit major release  (build 9200)
 //Command     : generate_target bd_soc_proj.bd
 //Design      : bd_soc_proj
@@ -283,7 +283,7 @@ module bd_soc_proj
         .S_AXI_WREADY(microblaze_0_axi_periph_M00_AXI_WREADY),
         .S_AXI_WSTRB(microblaze_0_axi_periph_M00_AXI_WSTRB),
         .S_AXI_WVALID(microblaze_0_axi_periph_M00_AXI_WVALID),
-        .clk(microblaze_0_Clk));
+        .clk(clk_wiz_1_clk_out2));
   bd_soc_proj_axi_gpio_0_0 axi_gpio_0
        (.gpio_io_i(axi_gpio_0_GPIO_TRI_I),
         .s_axi_aclk(microblaze_0_Clk),

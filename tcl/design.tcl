@@ -72,8 +72,8 @@ set run.prVerify       1
 set run.writeBitstream 1
 
 ####Report and DCP controls - values: 0-required min; 1-few extra; 2-all
-set verbose      1
-set dcpLevel     1
+set verbose      2
+set dcpLevel     2
 
 ####Output Directories
 set synthDir  "./Synth"
@@ -131,54 +131,50 @@ set_attribute module $static synth         	${run.topSynth}
 ####################################################################
 ### RP Module Definitions - Module 0
 ####################################################################
-set module0 "ReconfigurableModule"
+set module0 "TwiddleX"
 
-set module0_variant0 "rm_0_full"
+# Exact module
+set module0_variant0 "twiddleX_exact"
 set variant $module0_variant0
 add_module $variant
 set_attribute module $variant moduleName	$module0
-set_attribute module $variant sysvlog		[list	$rtlDir/constants.sv \
-													$rtlDir/configuration.sv \
-													$rtlDir/reconfigurablemodule.sv \
-													$rtlDir/agingsensor.sv \
-													$rtlDir/counter.sv \
-													$rtlDir/oscillator.sv ]
-set_attribute module $variant vlog			[list	$rtlDir/r2p_cordic.vhd \
-													$rtlDir/r2p_CordicPipe.vhd \
-													$rtlDir/r2p_corproc.vhd \
-													$rtlDir/r2p_post.vhd \
-													$rtlDir/r2p_pre.vhd ]
+set_attribute module $variant sysvlog		[list 	$rtlDir/constants.sv \
+													$rtlDir/configuration.sv ]
+set_attribute module $variant vhdl			[list	$rtlDir/TwiddleX_exact.vhd 	work \
+													$rtlDir/HA.vhd 				work \
+													$rtlDir/mult_exact.vhd 		work \
+													$rtlDir/adder_exact.vhd 	work \
+											]
 set_attribute module $variant synth			${run.rmSynth}
 
-set module0_variant1 "rm_0_empty"
+# Approximating module
+set module0_variant1 "twiddleX_approx"
 set variant $module0_variant1
 add_module $variant
 set_attribute module $variant moduleName	$module0
-set_attribute module $variant sysvlog		[list	$rtlDir/constants.sv \
-													$rtlDir/configuration.sv \
-													$rtlDir/reconfigurablemodule_placeholder.sv ]
-set_attribute module $variant synth        ${run.rmSynth}
+set_attribute module $variant sysvlog		[list 	$rtlDir/constants.sv \
+													$rtlDir/configuration.sv ]
+set_attribute module $variant vhdl			[list	$rtlDir/TwiddleX_approx.vhd 	work \
+													$rtlDir/HA.vhd 					work \
+													$rtlDir/add_approx.vhd	 		work \
+											]
+set_attribute module $variant vlog			[list	$rtlDir/mult_approx.v]
+set_attribute module $variant synth			${run.rmSynth}
 
-set module0_inst_0 "bd_soc_proj_i/ExperimentSystem_0/inst/experimentWrapper/experiment/reconfigurableModules[0].reconfigurableModuleFrame/ReconfigurableModule[0].reconfigureableModule"
-set module0_inst_1 "bd_soc_proj_i/ExperimentSystem_0/inst/experimentWrapper/experiment/reconfigurableModules[0].reconfigurableModuleFrame/ReconfigurableModule[1].reconfigureableModule"
-set module1_inst_0 "bd_soc_proj_i/ExperimentSystem_0/inst/experimentWrapper/experiment/reconfigurableModules[1].reconfigurableModuleFrame/ReconfigurableModule[0].reconfigureableModule"
-set module1_inst_1 "bd_soc_proj_i/ExperimentSystem_0/inst/experimentWrapper/experiment/reconfigurableModules[1].reconfigurableModuleFrame/ReconfigurableModule[1].reconfigureableModule"
+set module0_inst_0 "bd_soc_proj_i/ExperimentSystem_0/inst/experimentWrapper/experiment/twiddleX"
 
 ########################################################################
 ### Configuration (Implementation) Definition - Replicate for each Config
 ########################################################################
-set config "frame_0_module_0" 
+set config "conf_exact" 
 
 add_implementation $config
 set_attribute impl $config top                 $top
-set_attribute impl $config implXDC             [list $xdcDir/contraints.xdc \
-												     $xdcDir/pblocks.xdc \
-													 $xdcDir/pinning.xdc ]
-set_attribute impl $config partitions          [list [list $static           $top          implement] \
-                                                     [list $module0_variant0 $module0_inst_0 implement] \
-													 [list $module0_variant1 $module0_inst_1 implement] \
-													 [list $module0_variant1 $module1_inst_0 greybox] \
-													 [list $module0_variant1 $module1_inst_1 greybox] \
+set_attribute impl $config implXDC             [list	$xdcDir/contraints.xdc \
+														$xdcDir/pblocks.xdc \
+														$xdcDir/pinning.xdc ]
+set_attribute impl $config partitions          [list [list $static				$top			implement] \
+                                                     [list $module0_variant0	$module0_inst_0	implement] \
                                                ]
 set_attribute impl $config pr.impl             1
 set_attribute impl $config impl                ${run.prImpl} 
@@ -198,18 +194,16 @@ set_attribute impl $config partial_bitstream_settings [list "BITSTREAM.GENERAL.C
                                                       ]
 													  
 # ######################################################################################################
-set config "frame_0_module_1" 
+
+set config "conf_approx" 
 
 add_implementation $config
 set_attribute impl $config top                 $top
-set_attribute impl $config implXDC             [list $xdcDir/contraints.xdc \
-												     $xdcDir/pblocks.xdc \
-													 $xdcDir/pinning.xdc ]
-set_attribute impl $config partitions          [list [list $static           $top          import] \
-                                                     [list $module0_variant1 $module0_inst_0 implement] \
-													 [list $module0_variant0 $module0_inst_1 implement] \
-													 [list $module0_variant1 $module1_inst_0 greybox] \
-													 [list $module0_variant1 $module1_inst_1 greybox] \
+set_attribute impl $config implXDC             [list	$xdcDir/contraints.xdc \
+														$xdcDir/pblocks.xdc \
+														$xdcDir/pinning.xdc ]
+set_attribute impl $config partitions          [list [list $static				$top			import] \
+                                                     [list $module0_variant1	$module0_inst_0	implement] \
                                                ]
 set_attribute impl $config pr.impl             1
 set_attribute impl $config impl                ${run.prImpl} 
@@ -226,72 +220,9 @@ set_attribute impl $config bitstream_settings  [list "BITSTREAM.STARTUP.STARTUPC
 set_attribute impl $config bitstream_settings  $BITSTREAM_OPTIONS
 } 
 set_attribute impl $config partial_bitstream_settings [list "BITSTREAM.GENERAL.COMPRESS FALSE"   \
-                                                      ]						  
-
-######################################################################################################
-set config "frame_1_module_0" 
-
-add_implementation $config
-set_attribute impl $config top                 $top
-set_attribute impl $config implXDC             [list $xdcDir/contraints.xdc \
-												     $xdcDir/pblocks.xdc \
-													 $xdcDir/pinning.xdc ]
-set_attribute impl $config partitions          [list [list $static           $top          import] \
-                                                     [list $module0_variant1 $module0_inst_0 greybox] \
-													 [list $module0_variant0 $module0_inst_1 greybox] \
-													 [list $module0_variant0 $module1_inst_0 implement] \
-													 [list $module0_variant1 $module1_inst_1 implement] \
-                                               ]
-set_attribute impl $config pr.impl             1
-set_attribute impl $config impl                ${run.prImpl} 
-set_attribute impl $config verify              ${run.prVerify} 
-set_attribute impl $config bitstream           ${run.writeBitstream}
-if {$xboard == "vc709"} {
-set_attribute impl $config bitstream_settings  [list "BITSTREAM.STARTUP.STARTUPCLK      CCLK"    \
-                                                     "BITSTREAM.CONFIG.EXTMASTERCCLK_EN DISABLE" \
-                                                     "BITSTREAM.CONFIG.BPI_SYNC_MODE    DISABLE" \
-                                                     "BITSTREAM.CONFIG.PERSIST          NO"      \
-                                                     "BITSTREAM.GENERAL.COMPRESS        TRUE"   \
                                                       ]
-} else {
-set_attribute impl $config bitstream_settings  $BITSTREAM_OPTIONS
-} 
-set_attribute impl $config partial_bitstream_settings [list "BITSTREAM.GENERAL.COMPRESS FALSE"   \
-                                                      ]	
-
-
-######################################################################################################
-set config "frame_1_module_1" 
-
-add_implementation $config
-set_attribute impl $config top                 $top
-set_attribute impl $config implXDC             [list $xdcDir/contraints.xdc \
-												     $xdcDir/pblocks.xdc \
-													 $xdcDir/pinning.xdc ]
-set_attribute impl $config partitions          [list [list $static           $top          import] \
-                                                     [list $module0_variant1 $module0_inst_0 greybox] \
-													 [list $module0_variant0 $module0_inst_1 greybox] \
-													 [list $module0_variant1 $module1_inst_0 implement] \
-													 [list $module0_variant0 $module1_inst_1 implement] \
-                                               ]
-set_attribute impl $config pr.impl             1
-set_attribute impl $config impl                ${run.prImpl} 
-set_attribute impl $config verify              ${run.prVerify} 
-set_attribute impl $config bitstream           ${run.writeBitstream}
-if {$xboard == "vc709"} {
-set_attribute impl $config bitstream_settings  [list "BITSTREAM.STARTUP.STARTUPCLK      CCLK"    \
-                                                     "BITSTREAM.CONFIG.EXTMASTERCCLK_EN DISABLE" \
-                                                     "BITSTREAM.CONFIG.BPI_SYNC_MODE    DISABLE" \
-                                                     "BITSTREAM.CONFIG.PERSIST          NO"      \
-                                                     "BITSTREAM.GENERAL.COMPRESS        TRUE"   \
-                                                      ]
-} else {
-set_attribute impl $config bitstream_settings  $BITSTREAM_OPTIONS
-} 
-set_attribute impl $config partial_bitstream_settings [list "BITSTREAM.GENERAL.COMPRESS FALSE"   \
-                                                      ]	
-
-
+													  
+# ######################################################################################################
 
 
 # ===========================================================================

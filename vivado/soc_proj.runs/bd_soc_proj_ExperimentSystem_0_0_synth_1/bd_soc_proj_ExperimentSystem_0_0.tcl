@@ -70,11 +70,9 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "bd_soc_proj_ExperimentSystem_0_0_synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 3
-set_param synth.incrementalSynthesisCache C:/Users/David/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-12420-FREISMUTHDESK/incrSyn
+set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {HDL-1065} -limit 10000
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 set_msg_config  -id {[BD 41-1306]}  -suppress 
 set_msg_config  -id {[BD 41-1271]}  -suppress 
 set_msg_config  -id {[BD 41-1306]}  -suppress 
@@ -94,18 +92,14 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part_repo_paths {D:/Xilinx/BoardStore/XilinxBoardStore-2020.1} [current_project]
 set_property board_part digilentinc.com:nexys4_ddr:part0:1.1 [current_project]
-set_property ip_repo_paths {
-  d:/DEV/powerReconf/vivado/ip_repo/experiment_axi_wrapper_1.0
-  d:/DEV/powerReconf/experiment_axi/experiment_axi_1.0
-  d:/DEV/powerReconf/ip_repo/myip_1.0
-  d:/DEV/powerReconf/ip_repo/myip_1.0
-} [current_project]
+set_property ip_repo_paths d:/DEV/powerReconf/vivado/soc_proj.ip_user_files/bd/bd_soc_proj/ip [current_project]
 update_ip_catalog
 set_property ip_output_repo d:/DEV/powerReconf/vivado/soc_proj.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib -sv {
+  D:/DEV/powerReconf/hdl/TwiddleX_stub.sv
   D:/DEV/powerReconf/hdl/configuration.sv
   D:/DEV/powerReconf/hdl/constants.sv
   D:/DEV/powerReconf/hdl/experiment.sv
@@ -116,12 +110,6 @@ read_verilog -library xil_defaultlib {
   D:/DEV/powerReconf/hdl/experiment_axi_if.v
   D:/DEV/powerReconf/hdl/skidbuffer.v
   D:/DEV/powerReconf/hdl/experiment_system.v
-}
-read_vhdl -library xil_defaultlib {
-  D:/DEV/powerReconf/hdl/HA.vhd
-  D:/DEV/powerReconf/hdl/TwiddleX.vhd
-  D:/DEV/powerReconf/hdl/adder_exact.vhd
-  D:/DEV/powerReconf/hdl/mult_exact.vhd
 }
 read_ip -quiet D:/DEV/powerReconf/vivado/soc_proj.srcs/sources_1/bd/bd_soc_proj/ip/bd_soc_proj_ExperimentSystem_0_0/bd_soc_proj_ExperimentSystem_0_0.xci
 

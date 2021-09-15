@@ -33,8 +33,8 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity sub_exact is
 Port ( A : in STD_LOGIC_VECTOR (31 downto 0);
-           B : in STD_LOGIC_VECTOR (31 downto 0);
-           C : out STD_LOGIC_VECTOR (31 downto 0));
+       B : in STD_LOGIC_VECTOR (31 downto 0);
+       C : out STD_LOGIC_VECTOR (31 downto 0));
 end sub_exact;
 
 architecture Behavioral of sub_exact is

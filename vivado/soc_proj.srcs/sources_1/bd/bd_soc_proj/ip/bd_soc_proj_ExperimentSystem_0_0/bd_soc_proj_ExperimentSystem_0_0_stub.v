@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Sat Sep 11 16:04:41 2021
+// Date        : Tue Sep 14 23:48:49 2021
 // Host        : FREISMUTHDESK running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
 //               d:/DEV/powerReconf/vivado/soc_proj.srcs/sources_1/bd/bd_soc_proj/ip/bd_soc_proj_ExperimentSystem_0_0/bd_soc_proj_ExperimentSystem_0_0_stub.v

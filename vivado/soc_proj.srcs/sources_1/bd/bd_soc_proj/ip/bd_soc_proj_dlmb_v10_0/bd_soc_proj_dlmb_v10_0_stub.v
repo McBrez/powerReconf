@@ -1,11 +1,11 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Wed Mar 10 19:06:43 2021
+// Date        : Tue Sep 14 18:27:40 2021
 // Host        : FREISMUTHDESK running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub -rename_top bd_soc_proj_dlmb_v10_0 -prefix
-//               bd_soc_proj_dlmb_v10_0_ bd_soc_proj_dlmb_v10_0_stub.v
-// Design      : bd_soc_proj_dlmb_v10_0
+//               bd_soc_proj_dlmb_v10_0_ bd_soc_proj_ilmb_v10_0_stub.v
+// Design      : bd_soc_proj_ilmb_v10_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a100tcsg324-1
 // --------------------------------------------------------------------------------

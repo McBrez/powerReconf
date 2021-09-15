@@ -2,8 +2,8 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Sat Sep 11 16:03:16 2021
-# Process ID: 13156
+# Start of session at: Tue Sep 14 23:47:34 2021
+# Process ID: 3228
 # Current directory: D:/DEV/powerReconf/vivado/soc_proj.runs/bd_soc_proj_ExperimentSystem_0_0_synth_1
 # Command line: vivado.exe -log bd_soc_proj_ExperimentSystem_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source bd_soc_proj_ExperimentSystem_0_0.tcl
 # Log file: D:/DEV/powerReconf/vivado/soc_proj.runs/bd_soc_proj_ExperimentSystem_0_0_synth_1/bd_soc_proj_ExperimentSystem_0_0.vds

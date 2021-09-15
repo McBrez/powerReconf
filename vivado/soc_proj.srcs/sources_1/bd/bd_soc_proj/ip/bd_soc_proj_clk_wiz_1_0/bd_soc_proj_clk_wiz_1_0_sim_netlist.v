@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Thu Apr  1 00:12:30 2021
+// Date        : Tue Sep 14 18:27:06 2021
 // Host        : FREISMUTHDESK running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim -rename_top bd_soc_proj_clk_wiz_1_0 -prefix
 //               bd_soc_proj_clk_wiz_1_0_ bd_soc_proj_clk_wiz_1_0_sim_netlist.v

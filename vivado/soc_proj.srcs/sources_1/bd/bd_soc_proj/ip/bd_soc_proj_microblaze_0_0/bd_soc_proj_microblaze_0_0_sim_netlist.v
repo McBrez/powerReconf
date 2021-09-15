@@ -1,10 +1,10 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Wed Mar 10 19:05:33 2021
+// Date        : Tue Sep 14 18:36:44 2021
 // Host        : FREISMUTHDESK running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim -rename_top bd_soc_proj_microblaze_0_0 -prefix
-//               bd_soc_proj_microblaze_0_0_ bd_soc_proj_microblaze_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim
+//               d:/DEV/powerReconf/vivado/soc_proj.srcs/sources_1/bd/bd_soc_proj/ip/bd_soc_proj_microblaze_0_0/bd_soc_proj_microblaze_0_0_sim_netlist.v
 // Design      : bd_soc_proj_microblaze_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -1032,6 +1032,7 @@ module bd_soc_proj_microblaze_0_0
         .Write_Strobe(Write_Strobe));
 endmodule
 
+(* ORIG_REF_NAME = "ALU" *) 
 module bd_soc_proj_microblaze_0_0_ALU
    (LO,
     \EX_Op2_reg[0] ,
@@ -1712,6 +1713,7 @@ module bd_soc_proj_microblaze_0_0_ALU
         .lopt_3(lopt_74));
 endmodule
 
+(* ORIG_REF_NAME = "ALU_Bit" *) 
 module bd_soc_proj_microblaze_0_0_ALU_Bit
    (EX_CarryOut,
     \EX_Op2_reg[10] ,
@@ -3955,6 +3957,7 @@ module bd_soc_proj_microblaze_0_0_ALU_Bit__parameterized2
         .lopt(lopt));
 endmodule
 
+(* ORIG_REF_NAME = "Byte_Doublet_Handle_gti" *) 
 module bd_soc_proj_microblaze_0_0_Byte_Doublet_Handle_gti
    (wb_read_lsb_1_sel,
     wb_read_msb_doublet_sel,
@@ -4290,6 +4293,7 @@ module bd_soc_proj_microblaze_0_0_Byte_Doublet_Handle_gti
         .R(sync_reset));
 endmodule
 
+(* ORIG_REF_NAME = "DAXI_interface" *) 
 module bd_soc_proj_microblaze_0_0_DAXI_interface
    (active_access_d1,
     active_access,
@@ -5258,6 +5262,7 @@ module bd_soc_proj_microblaze_0_0_DAXI_interface
         .R(sync_reset));
 endmodule
 
+(* ORIG_REF_NAME = "Data_Flow_Logic" *) 
 module bd_soc_proj_microblaze_0_0_Data_Flow_Logic
    (\Using_FPGA.Native ,
     MEM_Fwd,
@@ -5708,6 +5713,7 @@ module bd_soc_proj_microblaze_0_0_Data_Flow_Logic
         .R(SR));
 endmodule
 
+(* ORIG_REF_NAME = "Data_Flow_gti" *) 
 module bd_soc_proj_microblaze_0_0_Data_Flow_gti
    (\EX_Op1_reg[0] ,
     out,
@@ -6547,6 +6553,7 @@ module bd_soc_proj_microblaze_0_0_Data_Flow_gti
         .wb_piperun(wb_piperun));
 endmodule
 
+(* ORIG_REF_NAME = "Debug" *) 
 module bd_soc_proj_microblaze_0_0_Debug
    (LOCKSTEP_Master_Out,
     \Serial_Dbg_Intf.force_stop_cmd_i_reg_0 ,
@@ -9698,6 +9705,7 @@ module bd_soc_proj_microblaze_0_0_Debug
         .R(1'b0));
 endmodule
 
+(* ORIG_REF_NAME = "Decode_gti" *) 
 module bd_soc_proj_microblaze_0_0_Decode_gti
    (of_pause_reg_0,
     D,
@@ -14602,6 +14610,7 @@ module bd_soc_proj_microblaze_0_0_Decode_gti
         .R(1'b0));
 endmodule
 
+(* ORIG_REF_NAME = "MB_AND2B1L" *) 
 module bd_soc_proj_microblaze_0_0_MB_AND2B1L
    (D,
     E,
@@ -14623,6 +14632,7 @@ module bd_soc_proj_microblaze_0_0_MB_AND2B1L
         .SRI(SRI));
 endmodule
 
+(* ORIG_REF_NAME = "MB_FDR" *) 
 module bd_soc_proj_microblaze_0_0_MB_FDR
    (\Performance_Debug_Control.ex_dbg_pc_hit_i_reg ,
     sync_reset,
@@ -14709,6 +14719,7 @@ module bd_soc_proj_microblaze_0_0_MB_FDR
         .O(of_set_MSR_EE1));
 endmodule
 
+(* ORIG_REF_NAME = "MB_FDRE" *) 
 module bd_soc_proj_microblaze_0_0_MB_FDRE
    (D,
     sync_reset,
@@ -25973,6 +25984,7 @@ module bd_soc_proj_microblaze_0_0_MB_FDR_306
         .O(\Using_FPGA.Native_0 ));
 endmodule
 
+(* ORIG_REF_NAME = "MB_FDS" *) 
 module bd_soc_proj_microblaze_0_0_MB_FDS
    (\Using_FPGA.Native_0 ,
     I041_out,
@@ -26580,6 +26592,7 @@ module bd_soc_proj_microblaze_0_0_MB_FDS
         .O(I0_0));
 endmodule
 
+(* ORIG_REF_NAME = "MB_LUT4" *) 
 module bd_soc_proj_microblaze_0_0_MB_LUT4
    (S,
     Q,
@@ -26609,6 +26622,7 @@ module bd_soc_proj_microblaze_0_0_MB_LUT4
         .O(S));
 endmodule
 
+(* ORIG_REF_NAME = "MB_LUT6" *) 
 module bd_soc_proj_microblaze_0_0_MB_LUT6
    (sel_input_iii_3,
     if_sel_input,
@@ -26751,6 +26765,7 @@ module bd_soc_proj_microblaze_0_0_MB_LUT6_118
         .O(sel_input_iii_0));
 endmodule
 
+(* ORIG_REF_NAME = "MB_LUT6_2" *) 
 module bd_soc_proj_microblaze_0_0_MB_LUT6_2
    (DI,
     S,
@@ -30201,6 +30216,7 @@ module bd_soc_proj_microblaze_0_0_MB_LUT6__parameterized8_84
         .O(\Using_FPGA.Native_0 ));
 endmodule
 
+(* ORIG_REF_NAME = "MB_MULT_AND" *) 
 module bd_soc_proj_microblaze_0_0_MB_MULT_AND
    (DI,
     I0,
@@ -30224,6 +30240,7 @@ module bd_soc_proj_microblaze_0_0_MB_MULT_AND
         .O(DI));
 endmodule
 
+(* ORIG_REF_NAME = "MB_MUXCY" *) 
 module bd_soc_proj_microblaze_0_0_MB_MUXCY
    (carry_7,
     SRL16_Sel_7,
@@ -32599,6 +32616,7 @@ module bd_soc_proj_microblaze_0_0_MB_MUXCY_99
         .O(if_valid));
 endmodule
 
+(* ORIG_REF_NAME = "MB_MUXCY_XORCY" *) 
 module bd_soc_proj_microblaze_0_0_MB_MUXCY_XORCY
    (\if_pc_reg[0] ,
     Q,
@@ -36692,6 +36710,7 @@ module bd_soc_proj_microblaze_0_0_MB_MUXCY_XORCY_581
   assign \EX_Op2_reg[0]_0  = lopt_1;
 endmodule
 
+(* ORIG_REF_NAME = "MB_MUXF7" *) 
 module bd_soc_proj_microblaze_0_0_MB_MUXF7
    (sel_input_i_1,
     S,
@@ -40287,6 +40306,7 @@ module bd_soc_proj_microblaze_0_0_MB_MUXF7_456
         .O(swap_result));
 endmodule
 
+(* ORIG_REF_NAME = "MB_RAM32M" *) 
 module bd_soc_proj_microblaze_0_0_MB_RAM32M
    (GPR_Op1,
     GPR_Op2,
@@ -41246,6 +41266,7 @@ module bd_soc_proj_microblaze_0_0_MB_RAM32M_424
         .WE(WB_GPR_Wr));
 endmodule
 
+(* ORIG_REF_NAME = "MB_SRL16E" *) 
 module bd_soc_proj_microblaze_0_0_MB_SRL16E
    (Q_0,
     Q,
@@ -41796,6 +41817,7 @@ module bd_soc_proj_microblaze_0_0_MB_SRL16E__parameterized9
         .Q(tdo_config_word1_4));
 endmodule
 
+(* ORIG_REF_NAME = "MB_SRLC16E" *) 
 module bd_soc_proj_microblaze_0_0_MB_SRLC16E
    (SRL16_Sel_7,
     which_pc__0,
@@ -42180,7 +42202,7 @@ endmodule
 (* C_USE_ICACHE = "0" *) (* C_USE_INTERRUPT = "0" *) (* C_USE_MMU = "0" *) 
 (* C_USE_MSR_INSTR = "0" *) (* C_USE_NON_SECURE = "0" *) (* C_USE_PCMP_INSTR = "0" *) 
 (* C_USE_REORDER_INSTR = "1" *) (* C_USE_STACK_PROTECTION = "0" *) (* G_TEMPLATE_LIST = "0" *) 
-(* downgradeipidentifiedwarnings = "yes" *) 
+(* ORIG_REF_NAME = "MicroBlaze" *) (* downgradeipidentifiedwarnings = "yes" *) 
 module bd_soc_proj_microblaze_0_0_MicroBlaze
    (RAM_To,
     RAM_From,
@@ -54826,6 +54848,7 @@ module bd_soc_proj_microblaze_0_0_MicroBlaze
        (.P(\<const1> ));
 endmodule
 
+(* ORIG_REF_NAME = "MicroBlaze_Core" *) 
 module bd_soc_proj_microblaze_0_0_MicroBlaze_Core
    (of_pause_reg,
     \Using_FPGA.Native ,
@@ -55083,6 +55106,7 @@ module bd_soc_proj_microblaze_0_0_MicroBlaze_Core
         .O(reset_temp__0));
 endmodule
 
+(* ORIG_REF_NAME = "MicroBlaze_GTi" *) 
 module bd_soc_proj_microblaze_0_0_MicroBlaze_GTi
    (of_pause_reg,
     \Using_FPGA.Native ,
@@ -56711,6 +56735,7 @@ module bd_soc_proj_microblaze_0_0_MicroBlaze_GTi
         .R(1'b0));
 endmodule
 
+(* ORIG_REF_NAME = "Operand_Select_gti" *) 
 module bd_soc_proj_microblaze_0_0_Operand_Select_gti
    (ex_load_alu_carry_reg,
     Q,
@@ -58301,6 +58326,7 @@ module bd_soc_proj_microblaze_0_0_Operand_Select_gti
         .O(in0));
 endmodule
 
+(* ORIG_REF_NAME = "PC_Module_gti" *) 
 module bd_soc_proj_microblaze_0_0_PC_Module_gti
    (\if_pc_reg[0]_0 ,
     D,
@@ -60631,6 +60657,7 @@ module bd_soc_proj_microblaze_0_0_PC_Module_gti
         .R(reset_bool_for_rst));
 endmodule
 
+(* ORIG_REF_NAME = "PreFetch_Buffer_gti" *) 
 module bd_soc_proj_microblaze_0_0_PreFetch_Buffer_gti
    (of_instr_raw,
     D,
@@ -63436,6 +63463,7 @@ module bd_soc_proj_microblaze_0_0_PreFetch_Buffer_gti
         .Q(\ibuffer_reg[2][9]_srl3_n_0 ));
 endmodule
 
+(* ORIG_REF_NAME = "Register_File_gti" *) 
 module bd_soc_proj_microblaze_0_0_Register_File_gti
    (GPR_Op1,
     GPR_Op2,
@@ -63692,6 +63720,7 @@ module bd_soc_proj_microblaze_0_0_Register_File_gti
         .of_imm_data(of_imm_data));
 endmodule
 
+(* ORIG_REF_NAME = "Shift_Logic_Module_gti" *) 
 module bd_soc_proj_microblaze_0_0_Shift_Logic_Module_gti
    (out,
     \EX_Op1_reg[24] ,
@@ -63711,6 +63740,7 @@ module bd_soc_proj_microblaze_0_0_Shift_Logic_Module_gti
   assign sign_doublet = \Using_FPGA.Native ;
 endmodule
 
+(* ORIG_REF_NAME = "Zero_Detect_gti" *) 
 module bd_soc_proj_microblaze_0_0_Zero_Detect_gti
    (ex_op1_zero,
     ex_op1_cmp_equal,
@@ -63861,6 +63891,7 @@ module bd_soc_proj_microblaze_0_0_Zero_Detect_gti
         .zero_CI_6(zero_CI_6));
 endmodule
 
+(* ORIG_REF_NAME = "address_hit" *) 
 module bd_soc_proj_microblaze_0_0_address_hit
    (Hit,
     \Performance_Debug_Control.ex_dbg_pc_hit_single_step_reg ,
@@ -64098,6 +64129,7 @@ module bd_soc_proj_microblaze_0_0_address_hit
         .single_Step_N_reg(single_Step_N_reg));
 endmodule
 
+(* ORIG_REF_NAME = "carry_and" *) 
 module bd_soc_proj_microblaze_0_0_carry_and
    (of_PipeRun_carry_1,
     use_Reg_Neg_S_reg,
@@ -64774,6 +64806,7 @@ module bd_soc_proj_microblaze_0_0_carry_and_89
         .wb_valid_reg_0(wb_valid_reg_0));
 endmodule
 
+(* ORIG_REF_NAME = "carry_or" *) 
 module bd_soc_proj_microblaze_0_0_carry_or
    (mem_wait_on_ready_N,
     MEM_DataBus_Ready,
@@ -64836,6 +64869,7 @@ module bd_soc_proj_microblaze_0_0_carry_or
         .mem_wait_on_ready_N(mem_wait_on_ready_N));
 endmodule
 
+(* ORIG_REF_NAME = "exception_registers_gti" *) 
 module bd_soc_proj_microblaze_0_0_exception_registers_gti
    (DI,
     \Using_FPGA.Native ,
@@ -65933,6 +65967,7 @@ module bd_soc_proj_microblaze_0_0_exception_registers_gti
         .\Using_FPGA.Native_2 (\Using_FPGA_LUT6.Gen_Ret_Addr[9].I_RET_ADDR_WB_n_0 ));
 endmodule
 
+(* ORIG_REF_NAME = "instr_mux" *) 
 module bd_soc_proj_microblaze_0_0_instr_mux
    (I139_out,
     Y,
@@ -65967,6 +66002,7 @@ module bd_soc_proj_microblaze_0_0_instr_mux
         .in(in));
 endmodule
 
+(* ORIG_REF_NAME = "jump_logic" *) 
 module bd_soc_proj_microblaze_0_0_jump_logic
    (ex_jump,
     ex_op1_cmp_equal,
@@ -66409,6 +66445,7 @@ module bd_soc_proj_microblaze_0_0_jump_logic
         .R(reset_bool_for_rst));
 endmodule
 
+(* ORIG_REF_NAME = "mb_sync_bit" *) 
 module bd_soc_proj_microblaze_0_0_mb_sync_bit
    (out,
     reset_temp,
@@ -67368,6 +67405,7 @@ module bd_soc_proj_microblaze_0_0_mb_sync_bit__parameterized4_30
         .R(sync_reset));
 endmodule
 
+(* ORIG_REF_NAME = "mb_sync_vec" *) 
 module bd_soc_proj_microblaze_0_0_mb_sync_vec
    (D,
     AR,
@@ -67550,6 +67588,7 @@ module bd_soc_proj_microblaze_0_0_mb_sync_vec__parameterized1
         .sync_reset(sync_reset));
 endmodule
 
+(* ORIG_REF_NAME = "msr_reg_gti" *) 
 module bd_soc_proj_microblaze_0_0_msr_reg_gti
    (ex_MSR,
     MEM_Fwd,
@@ -67673,6 +67712,7 @@ module bd_soc_proj_microblaze_0_0_msr_reg_gti
         .R(sync_reset));
 endmodule
 
+(* ORIG_REF_NAME = "mux_bus" *) 
 module bd_soc_proj_microblaze_0_0_mux_bus
    (I139_out,
     Y,
